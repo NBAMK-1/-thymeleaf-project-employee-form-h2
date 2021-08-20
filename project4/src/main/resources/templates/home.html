@@ -1,0 +1,51 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+</head>
+<body>
+<div>
+<h4>Current Project</h4>
+<table border="2px" >
+    <thead>
+    <tr>
+        <th>Project Name</th>
+        <th>Project Stage</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each= "aProject: ${projects}">
+        <td th:text="${aProject.name}"/>
+        <td th:text="${aProject.stage}"/>
+    </tr>
+    </tbody>
+</table>
+</div>
+
+<div>
+    <h4>Current Employee</h4>
+    <table>
+        <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each= "aEmployee: ${employeesList}">
+            <td th:text="${aEmployee.firstName}"/>
+            <td th:text="${aEmployee.lastName}"/>
+            <td th:text="${aEmployee.email}"/>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

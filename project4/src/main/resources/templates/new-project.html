@@ -1,0 +1,32 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+</head>
+<body>
+<!--<nav th:replace="layouts :: navbar"></nav>-->
+<div class="container">
+    <form action="/projects/save" th:object="${project}" method="POST">
+
+        <input type="text" placeholder="Project Name" th:field="${project.name}">
+
+        <select th:field="${project.stage}">
+            <option th:value="NOTSTARTED"> Not Started</option>
+            <option th:value="INPROGRESS"> In Progress</option>
+            <option th:value="COMPLETED"> Completed</option>
+        </select>
+
+        <textarea type="text" placeholder="Enter Project Description" th:field="${project.description}"></textarea>
+
+        <button type="submit">Create Project</button>
+
+    </form>
+</div>
+
+</body>
+</html>
